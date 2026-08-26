@@ -1,0 +1,51 @@
+{
+	"name": "n8n-nodes-pinglet",
+	"version": "1.0.0",
+	"description": "n8n community node for Pinglet, a webhook to push notification service",
+	"keywords": [
+		"n8n-community-node-package",
+		"pinglet",
+		"push",
+		"notifications",
+		"apns",
+		"fcm"
+	],
+	"license": "MIT",
+	"homepage": "https://pinglet.dev",
+	"author": {
+		"name": "Bitnix Limited"
+	},
+	"engines": {
+		"node": ">=18.10"
+	},
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc && gulp build:icons",
+		"dev": "tsc --watch",
+		"lint": "eslint nodes credentials package.json",
+		"lintfix": "eslint nodes credentials package.json --fix"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"credentials": [
+			"dist/credentials/PingletApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/Pinglet/Pinglet.node.js"
+		]
+	},
+	"devDependencies": {
+		"@typescript-eslint/parser": "^7.15.0",
+		"eslint": "^8.57.0",
+		"eslint-plugin-n8n-nodes-base": "^1.16.3",
+		"gulp": "^5.0.0",
+		"n8n-workflow": "*",
+		"typescript": "^5.5.3"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	}
+}
