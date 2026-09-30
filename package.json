@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-pinglet",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "n8n community node for Pinglet, a webhook to push notification service",
 	"keywords": [
 		"n8n-community-node-package",
