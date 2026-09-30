@@ -12,6 +12,13 @@
 	],
 	"license": "MIT",
 	"homepage": "https://pinglet.dev",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TheGlenn88/n8n-nodes-pinglet.git"
+	},
+	"bugs": {
+		"url": "https://github.com/TheGlenn88/n8n-nodes-pinglet/issues"
+	},
 	"author": {
 		"name": "Bitnix Limited"
 	},
@@ -26,7 +33,8 @@
 		"lintfix": "eslint nodes credentials package.json --fix"
 	},
 	"files": [
-		"dist"
+		"dist",
+		"!dist/tsconfig.tsbuildinfo"
 	],
 	"n8n": {
 		"n8nNodesApiVersion": 1,
