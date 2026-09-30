@@ -20,17 +20,17 @@
 		"url": "https://github.com/TheGlenn88/n8n-nodes-pinglet/issues"
 	},
 	"author": {
-		"name": "Bitnix Limited"
+		"name": "Bitnix Limited",
+		"email": "support@pinglet.dev"
 	},
-	"engines": {
-		"node": ">=18.10"
-	},
-	"main": "index.js",
 	"scripts": {
-		"build": "tsc && gulp build:icons",
-		"dev": "tsc --watch",
-		"lint": "eslint nodes credentials package.json",
-		"lintfix": "eslint nodes credentials package.json --fix"
+		"build": "n8n-node build",
+		"build:watch": "tsc --watch",
+		"dev": "n8n-node dev",
+		"lint": "n8n-node lint",
+		"lint:fix": "n8n-node lint --fix",
+		"release": "n8n-node release",
+		"prepublishOnly": "n8n-node prerelease"
 	},
 	"files": [
 		"dist",
@@ -38,6 +38,7 @@
 	],
 	"n8n": {
 		"n8nNodesApiVersion": 1,
+		"strict": true,
 		"credentials": [
 			"dist/credentials/PingletApi.credentials.js"
 		],
@@ -46,12 +47,11 @@
 		]
 	},
 	"devDependencies": {
-		"@typescript-eslint/parser": "^7.15.0",
-		"eslint": "^8.57.0",
-		"eslint-plugin-n8n-nodes-base": "^1.16.3",
-		"gulp": "^5.0.0",
-		"n8n-workflow": "*",
-		"typescript": "^5.5.3"
+		"@n8n/node-cli": "^0.50.3",
+		"eslint": "9.32.0",
+		"prettier": "3.6.2",
+		"release-it": "^19.0.4",
+		"typescript": "5.9.2"
 	},
 	"peerDependencies": {
 		"n8n-workflow": "*"

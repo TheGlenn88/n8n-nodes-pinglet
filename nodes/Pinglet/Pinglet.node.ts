@@ -5,6 +5,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'n8n-workflow';
 
 interface KeyValuePair {
 	key: string;
@@ -48,7 +49,7 @@ export class Pinglet implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Pinglet',
 		name: 'pinglet',
-		icon: 'file:pinglet.svg',
+		icon: { light: 'file:../../icons/pinglet.svg', dark: 'file:../../icons/pinglet.dark.svg' },
 		group: ['output'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["topic"]}}',
@@ -56,8 +57,9 @@ export class Pinglet implements INodeType {
 		defaults: {
 			name: 'Pinglet',
 		},
-		inputs: ['main'],
-		outputs: ['main'],
+		usableAsTool: true,
+		inputs: [NodeConnectionTypes.Main],
+		outputs: [NodeConnectionTypes.Main],
 		credentials: [
 			{
 				name: 'pingletApi',

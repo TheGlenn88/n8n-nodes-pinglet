@@ -51,7 +51,22 @@ Every phone subscribed to the topic's share link receives the push notification.
 
 ## Compatibility
 
-Tested with n8n 1.x. Requires Node.js 18.10 or newer for local development.
+Tested with n8n 1.x.
+
+## Development
+
+Built with the [`@n8n/node-cli`](https://www.npmjs.com/package/@n8n/node-cli) tooling:
+
+```sh
+npm install
+npm run dev    # runs n8n locally with this node loaded, rebuilding on changes
+npm run lint
+npm run build
+```
+
+## Releasing
+
+Releases are published to npm from GitHub Actions with a provenance statement (`.github/workflows/publish.yml`), triggered by pushing a version tag such as `1.0.1`. `npm run release` bumps the version, tags and pushes; the workflow does the publish.
 
 ## Resources
 
