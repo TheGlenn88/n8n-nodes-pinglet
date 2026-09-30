@@ -66,7 +66,11 @@ npm run build
 
 ## Releasing
 
-Releases are published to npm from GitHub Actions with a provenance statement (`.github/workflows/publish.yml`), triggered by pushing a version tag such as `1.0.1`. `npm run release` bumps the version, tags and pushes; the workflow does the publish.
+Pushing a version tag such as `1.0.2` runs `.github/workflows/publish.yml`, which builds the package and stages it on npm with a provenance statement (`npm stage publish`). The version goes live once a maintainer approves it with 2FA, from the package's **Staged Packages** tab on npmjs.com or with `npm stage approve <stage-id>`.
+
+```sh
+npm version patch --tag-version-prefix="" && git push --follow-tags
+```
 
 ## Resources
 
